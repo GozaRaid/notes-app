@@ -13,7 +13,7 @@ const addNoteHandler = (request, h) => {
   };
 
   notes.push(newNote);
-  console.log(newNote.createAt);
+
   const isSuccess = notes.filter((note) => note.id === id).length > 0;
   if (isSuccess) {
     const response = h.response({
@@ -106,7 +106,7 @@ const DeleteNoteByIdHandler = (request, h) => {
       status: 'success',
       message: 'Catatan berhasil dihapus',
     });
-    response.code(201);
+    response.code(200);
     return response;
   }
 
