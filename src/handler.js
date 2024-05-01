@@ -102,7 +102,7 @@ const DeleteNoteByIdHandler = (request, h) => {
 
   if (indexNote !== -1) {
     notes.splice(indexNote, 1);
-    const response = h.request({
+    const response = h.response({
       status: 'success',
       message: 'Catatan berhasil dihapus',
     });
@@ -110,7 +110,7 @@ const DeleteNoteByIdHandler = (request, h) => {
     return response;
   }
 
-  const response = h.request({
+  const response = h.response({
     status: 'success',
     message: 'Catatan gagal dihapus, tidak dapat menemukan catatan',
   });
